@@ -12,18 +12,24 @@ linktorepo="github.com/belain3d/linux-git-automation.git"
 # This is for --help and -h
 filename="./ga.sh"
 
+# Program begins here
 if [ "$1" == "" ]
 then
 	echo "Specify an argument. See --help or -h for more information."
 	exit 1
 elif [ "$1" == "--help" -o "$1" == "-h" ]
 then
-	echo "| $filename add filename (or .)	      |"
-	echo "| $filename commit \"message\"	      |"
-	echo "| $filename push branch		      |"
-	echo "| $filename pull branch		      |"
-	echo "| $filename status		      |"
-	echo "| $filename clone 		      |"
+	echo "--------------------------------------------------"							 
+	echo "| $filename add filename (or .)	      		 |"
+	echo "| $filename commit \"message\"	      		 |"
+	echo "| $filename push |branch|		      		 |"
+	echo "| $filename pull |branch|		      		 |"
+	echo "| $filename status		      		 |"
+	echo "| $filename clone			      		 |"
+	echo "| $filename branch |-d|--delete|branch|	         |"
+	echo "| $filename checkout |branch|	      		 |"
+	echo "--------------------------------------------------"
+	
 fi
 
 if [ "$1" == "clone" ]
