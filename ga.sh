@@ -9,6 +9,13 @@ username="belain3d"
 token="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"
 linktorepo="github.com/belain3d/linux-git-automation.git"
 
+# These are color codes
+
+fncolor='\e[36m'      # Cyan
+commandcolor='\e[93m' # Yellow
+argcolor="\e[34m"     # Blue
+ENDCOLOR='\e[0m'
+
 # This is for --help and -h
 filename="./ga.sh"
 
@@ -20,14 +27,14 @@ then
 elif [ "$1" == "--help" -o "$1" == "-h" ]
 then
 	echo "--------------------------------------------------"							 
-	echo "| $filename add filename (or .)	      		 |"
-	echo "| $filename commit \"message\"	      		 |"
-	echo "| $filename push |branch|		      		 |"
-	echo "| $filename pull |branch|		      		 |"
-	echo "| $filename status		      		 |"
-	echo "| $filename clone			      		 |"
-	echo "| $filename branch |-d|--delete|branch|	         |"
-	echo "| $filename checkout |branch|	      		 |"
+	echo -e "| ${fncolor}$filename${ENDCOLOR} ${commandcolor}add${ENDCOLOR} ${argcolor}filename (or .)${ENDCOLOR}	      		 |"
+	echo -e "| ${fncolor}$filename${ENDCOLOR} ${commandcolor}commit${ENDCOLOR} ${argcolor}\"message\"${ENDCOLOR}	      		 |"
+	echo -e "| ${fncolor}$filename${ENDCOLOR} ${commandcolor}push${ENDCOLOR} ${argcolor}|branch|${ENDCOLOR}		      		 |"
+	echo -e "| ${fncolor}$filename${ENDCOLOR} ${commandcolor}pull${ENDCOLOR} ${argcolor}|branch|${ENDCOLOR}		      		 |"
+	echo -e "| ${fncolor}$filename${ENDCOLOR} ${commandcolor}status${ENDCOLOR}		      		 |"
+	echo -e "| ${fncolor}$filename${ENDCOLOR} ${commandcolor}clone${ENDCOLOR}			      		 |"
+	echo -e "| ${fncolor}$filename${ENDCOLOR} ${commandcolor}branch${ENDCOLOR} ${argcolor}|-d|--delete|branch|${ENDCOLOR}	         |"
+	echo -e "| ${fncolor}$filename${ENDCOLOR} ${commandcolor}checkout ${argcolor}|branch|${ENDCOLOR}	      		 |"
 	echo "--------------------------------------------------"
 	
 fi
