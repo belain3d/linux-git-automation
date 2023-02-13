@@ -1,9 +1,16 @@
 #!/bin/bash
 
+# Git Automation process made for Linux distros.
+# This was made because of the repetetive token request on Linux distros.
+# Configure your username, token and git repo as portrayed below.
+
+# Configure these
 username="belain3d"
 token="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"
-filename="./ga.sh"
 linktorepo="github.com/belain3d/linux-git-automation.git"
+
+# This is for --help and -h
+filename="./ga.sh"
 
 if [ "$1" == "" ]
 then
@@ -11,11 +18,12 @@ then
 	exit 1
 elif [ "$1" == "--help" -o "$1" == "-h" ]
 then
-	echo "| $filename clone yourDesiredFolderName |"
+	echo "| $filename add filename (or .)	      |"
+	echo "| $filename commit -m message	      |"
 	echo "| $filename push branch		      |"
 	echo "| $filename pull branch		      |"
-	
-	exit 1
+	echo "| $filename status		      |"
+	echo "| $filename clone 		      |"
 fi
 
 if [ "$1" == "clone" ]
