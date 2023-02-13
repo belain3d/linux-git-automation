@@ -51,7 +51,7 @@ elif [ $1 == "commit" ]
 then
 	if [ "$2" == "$2" ]
 	then
-		git commit -m $2
+		git commit -m "$2"
 	fi
 
 elif [ "$1" == "status" ]
