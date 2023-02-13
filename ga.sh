@@ -61,4 +61,22 @@ then
 elif [ "$1" == "push" ]
 then
 	git push "https://$username:$token@$linktorepo" $2
+	
+elif [ "$1" == "branch" ]
+then
+	if [ -z $2 ]
+	then
+		git branch
+	elif [ "$2" == "-d" -o "$2" == "--delete" ]
+	then
+		if [[ "$3" == "$3" ]]
+		then
+			git branch -d $3
+		fi
+	elif [[ -n "$2" ]] # opposite is -z, -n is true if the length of string is non-zero
+	then
+		echo "Created branch $2"
+		git branch $2
+	fi
+
 fi
