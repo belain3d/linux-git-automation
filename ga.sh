@@ -3,7 +3,7 @@
 username="belain3d"
 token="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"
 filename="./ga.sh"
-linktorepo="github.com/imkms/linux.git"
+linktorepo="github.com/belain3d/linux-git-automation.git"
 
 if [ "$1" == "" ]
 then
@@ -26,18 +26,17 @@ then
 
 elif [ "$1" == "pull" ]
 then
-	git pull "https://$username:$token@$linktorepo" $2
+	git pull "https://$username:$token@$linktorepo"
 
 elif [ "$1" == "add" ]
 then
-	if [ "$2" == "." ]
+	if [ "$2" == $2 ]
 	then
-		git add .
-	elif [ "$2" == "" ]
-	then
-		echo "Please add \".\" as second argument (this will add everything onto the stage.)"
-	else
-		echo "Invalid argument \"$2\""
+		git add $2
+		if [ $? -ne 0 ]
+		then
+			echo !!
+		fi
 	fi
 
 elif [ $1 == "commit" ]
