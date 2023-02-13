@@ -19,7 +19,7 @@ then
 elif [ "$1" == "--help" -o "$1" == "-h" ]
 then
 	echo "| $filename add filename (or .)	      |"
-	echo "| $filename commit -m message	      |"
+	echo "| $filename commit \"message\"	      |"
 	echo "| $filename push branch		      |"
 	echo "| $filename pull branch		      |"
 	echo "| $filename status		      |"
