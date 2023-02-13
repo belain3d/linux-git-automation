@@ -79,4 +79,14 @@ then
 		git branch $2
 	fi
 
+elif [ "$1" == "checkout" ]
+then
+	if [ -z $2 ]
+	then
+		git checkout
+	
+	elif [ -n $2 ]
+	then
+		git checkout $2
+	fi
 fi
