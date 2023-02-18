@@ -37,6 +37,7 @@ then
 	echo -e "| ${fncolor}$filename${ENDCOLOR} ${commandcolor}checkout ${argcolor}|branch|${ENDCOLOR}	      		 |"
         echo -e "| ${fncolor}$filename${ENDCOLOR} ${commandcolor}--copytobin ${argcolor} copies to /usr/local/bin${ENDCOLOR}	 |"
         echo -e "| ${fncolor}$filename${ENDCOLOR} ${commandcolor}--edit ${argcolor} edits in /usr/local/bin${ENDCOLOR}	 |"
+        echo -e "| ${fncolor}$filename${ENDCOLOR} ${commandcolor}--help or -h	${argcolor}prints help menu${ENDCOLOR}	 |"
 echo "--------------------------------------------------"
 
 fi
@@ -47,9 +48,10 @@ then
 
 elif [ "$1" == "--copytobin" ]; then
 	sudo cp ./ga.sh /usr/local/bin/ga
+	chmod 777 /usr/local/bin/ga
 
 elif [ "$1" == "--edit" -o "$1" == "-e" ]; then
-	sudo nano "/usr/local/bin/ga"
+	nano "/usr/local/bin/ga"
 
 
 elif [ "$1" == "pull" ]
