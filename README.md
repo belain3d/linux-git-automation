@@ -16,8 +16,11 @@ The commands are almost the same as git's, however you should run the .sh script
 | ./ga.sh clone                                  |
 | ./ga.sh branch |-d|--delete|branch|            |
 | ./ga.sh checkout |branch|                      |
+| ./ga.sh --copytobin copies to /usr/local/bin   |
+| ./ga.sh --edit edits in /usr/local/bin         |
+| ./ga.sh --help or -h prints help menu          |
 --------------------------------------------------
 ```
 
-Optionally, you could put the ga.sh script to your ```/usr/local/bin``` directory without the .sh extension (ga). This will
-allow you to run the program from any directory. Don't forget to change your authentication though!
+Optionally, you could put the ga.sh script to your ```/usr/local/bin``` directory without the .sh extension (ga) with the --copytobin argument. This will
+allow you to run the program from any directory. Don't forget to change your token every time you switch a repo though, the ga file can be edited quickly with the --edit argument!
