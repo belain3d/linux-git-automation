@@ -35,15 +35,22 @@ then
 	echo -e "| ${fncolor}$filename${ENDCOLOR} ${commandcolor}clone${ENDCOLOR}			      		 |"
 	echo -e "| ${fncolor}$filename${ENDCOLOR} ${commandcolor}branch${ENDCOLOR} ${argcolor}|-d|--delete|branch|${ENDCOLOR}	         |"
 	echo -e "| ${fncolor}$filename${ENDCOLOR} ${commandcolor}checkout ${argcolor}|branch|${ENDCOLOR}	      		 |"
-	echo "--------------------------------------------------"
-	
+        echo -e "| ${fncolor}$filename${ENDCOLOR} ${commandcolor}--copytobin ${argcolor} copies to /usr/local/bin${ENDCOLOR}	 |"
+        echo -e "| ${fncolor}$filename${ENDCOLOR} ${commandcolor}--edit ${argcolor} edits in /usr/local/bin${ENDCOLOR}	 |"
+echo "--------------------------------------------------"
+
 fi
 
 if [ "$1" == "clone" ]
 then
 	git clone "https://"$username":$token@$linktorepo" | grep $linktorepo | cut -d "/" -f 3 | cut -d "." -f 1
-                               
-                              
+
+elif [ "$1" == "--copytobin" ]; then
+	sudo cp ./ga.sh /usr/local/bin/ga
+
+elif [ "$1" == "--edit" -o "$1" == "-e" ]; then
+	sudo nano "/usr/local/bin/ga"
+
 
 elif [ "$1" == "pull" ]
 then
@@ -74,7 +81,7 @@ then
 elif [ "$1" == "push" ]
 then
 	git push "https://$username:$token@$linktorepo" $2
-	
+
 elif [ "$1" == "branch" ]
 then
 	if [ -z $2 ]
@@ -97,7 +104,7 @@ then
 	if [ -z $2 ]
 	then
 		git checkout
-	
+
 	elif [ -n $2 ]
 	then
 		git checkout $2
